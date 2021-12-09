@@ -25,11 +25,7 @@ galleryEl.addEventListener('click', handleClick);
 function handleClick(event) {
   event.preventDefault();
 
-  const instance = basicLightbox.create(`
-<div class="modal">
-<img src="${event.target.dataset.source}" width="1000">
-</div>
-`);
-
-  instance.show();
+  basicLightbox
+    .create(`<img src="${event.target.dataset.source}" width="1000">`)
+    .show();
 }
