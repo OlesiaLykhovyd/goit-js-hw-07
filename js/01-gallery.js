@@ -25,7 +25,9 @@ galleryEl.addEventListener('click', handleClick);
 function handleClick(event) {
   event.preventDefault();
 
-  basicLightbox
-    .create(`<img src="${event.target.dataset.source}" width="1000">`)
-    .show();
+  if (event.target.nodeName === 'IMG') {
+    basicLightbox
+      .create(`<img src="${event.target.dataset.source}" width="1000">`)
+      .show();
+  }
 }
